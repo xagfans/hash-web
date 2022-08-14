@@ -34,8 +34,8 @@
         <p><strong>rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet</strong></p>
         <p>首次发送时请输入标签：<strong id="tag"></strong></p>
         <p>投注范围：100~100000 XAG, 10~1000 USDT</p>
-        <p>使用聊天软件Telegram，添加@xagcash对接客服了解更多玩法以及领取活动奖励。</p>
-        <hr/>
+        <p>点击下载使用聊天软件Telegram，添加@xagcash对接客服了解更多玩法以及领取活动奖励。</p>
+        <p><a href="https://telegram.org/dl" target="_blank">https://telegram.org/dl</a>（非官网电报有恶意木马插件，为避免造成财产损失下载请认准此官方下载链接。）</p>
         <h3>成就（截止8月13日）</h3>
         <ul>
             <li>单日冠军，单日净赚23万XAG: rDDj...JQYt</li>
@@ -43,17 +43,19 @@
             <li>推荐冠军，单日返佣2万XAG：rnaw...3f39</li>
         </ul>
         <hr/>
-        <p>复制以下链接并在问号（？）后输入你的邀请码，即可生成自己的邀请介绍页面。</p>
-        <p>例如:（邀请码）220892</p>
-        <p>修改到下面链接问号（？）后面https://xagfans.github.io/hash-web/?220892</p>
+        <p>复制以下链接并在问号（?）后输入你的邀请码，即可生成自己的邀请介绍页面。</p>
+        <p>例如:（邀请码）<strong id="tag1"></strong></p>
+        <p>修改到下面链接问号（?）后面https://xagfans.github.io/hash-web/?<span id="tag2"></span></p>
         <p>如何获得自己的邀请码？</p>
         <p>在首次填写邀请码发送中奖后，系统就会发回奖金转账，点击这笔转账信息，里面的标签Tag就是自己的专属邀请码。新用户发送时输入此邀请码，即绑定你为邀请人，不可更改，永久领取邀请奖励永久有效。</p>
         <p>两级奖励，直推用户奖金的<strong>2%</strong>，二级用户奖金的<strong>0.5%</strong>，中奖现返奖励。</p>
     </div>
 </body>
 <script type="text/javascript">
-    var searchStr = location.search || "?你的推荐人标签";
+    var searchStr = location.search || "?数字标签";
     var referTag = searchStr.substring(1);
     document.getElementById("tag").innerHTML = referTag;
+    document.getElementById("tag1").innerHTML = referTag;
+    document.getElementById("tag2").innerHTML = referTag;
 </script>  
 </html>
