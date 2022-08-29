@@ -4,32 +4,68 @@
     <meta charset="utf-8">
     <title>奇偶哈希</title>
     <style>
-        .hash_container {
-            width: 90%;
-            margin: 5% auto 0;
-            background-color: #f0f0f0;
-            padding: 2% 5%;
-            border-radius: 10px
+        html { box-sizing: border-box; }
+
+        *,
+        *::before,
+        *::after { box-sizing: inherit; }
+
+        body * {
+          margin: 0;
+          padding: 0;
         }
-        .hash_container .center {
+
+        body {
+          font: normal 100%/1.15 "Merriweather", serif;
+          background-color: #D3DEEA;
+          color: #216f79;
+        }
+
+        .wrapper {
+          position: relative;
+          max-width: 1298px;
+          height: auto;
+          text-indent: 2em;
+        }
+
+        .box {
+          max-width: 90%;
+          min-height: auto;
+          margin: 0 auto;
+          padding: 1em 1em;
+        }
+
+        .box .none {
+            text-indent: 0;
+        }
+        .box .center {
             text-indent: 0;
             text-align: center;
         }
-        .hash_container .none {
-            text-indent: 0;
+
+        h1 {
+          margin: 0 0 1rem 0;
+          font-size: 1.8em;
         }
 
-        ul {
-            padding-left: 20px;
+        p {
+          margin-bottom: 0.5em;
+          font-size: 16px;
         }
 
-        ul li {
-            line-height: 2.3
+        /*p:first-of-type { margin-top: 4em; }*/
+
+        p > a {
+          border-bottom: 1px dashed #216f79;
+          font-style: normal;
+          text-decoration: none;
+          color: #216f79;
+          text-shadow: 0 0 6px #216f79;
         }
 
-        a {
-            color: #20a53a
-        }
+        p > a:hover { text-shadow: 0 0 6px #216f79; }
+
+        p img { vertical-align: bottom; }
 
         .button {
             background-color: #4CAF50; /* Green */
@@ -44,15 +80,37 @@
     </style>
 </head>
 <body>
-    <div class="hash_container">
-        <h1 class="center">奇偶哈希</h1>
-        <h3>算法保证，智能合约运行。公平，极速，即开即返。</h3>        
-        <p>发送XAG或USDT到合约地址，个位数的奇偶与区块高度哈希最后一位数字的奇偶相同即中奖。</p>
-        <p class="center"><img src="https://xag-labs.com/dapp/ibet.png" height="186" width="186" alt=""></p>
-        <p class="center"><strong>rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet</strong></p>
-        <p>例如：发送101 XAG，如果区块高度最后一位数字是奇数，则中奖。发送100 XAG，则区块高度最后一位数字是偶数中奖。</p>
-        <p>范围：100~100000 XAG, 10~1000 USDT</p>
-        <p class="center"><a class="button" href="XSEND://xrpgen:100:XAG::rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet::">开始竞猜</a></p>       
+    <div class="wrapper">
+        <div class="box" id="game">
+            <h1 class="center">奇偶哈希</h1>
+            <p>算法保证，智能合约运行。公平，极速，即开即返。</p>        
+            <p>发送XAG或USDT到下方合约地址，金额个位数的奇偶与区块高度哈希最后一位数字的奇偶相同即中奖。</p>
+            <p class="center"><img src="https://xag-labs.com/dapp/ibet.png" height="186" width="186"></p>
+            <p class="center"><strong>rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet</strong></p>
+            <p>例如：发送101 XAG，如果区块高度最后一位数字是奇数，则中奖。发送100 XAG，则区块高度最后一位数字是偶数中奖。</p>
+            <p>范围：100~100000 XAG, 10~1000 USDT</p>
+            <p class="center"><a class="button" href="XSEND://xrpgen:100:XAG::rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet::">开始竞猜</a></p>
+            <p class="none"><a href="https://xag-labs.com/dapp/refer.html">邀请他人得返奖</a></p>
+            <p class="none"><a href="javascript:;" onclick="check()">邀请他人得返奖</a></p>
+        </div>
+        <div class="box" id="refer" style="display: none;">
+            <h1 class="center">返奖规则</h1>
+            <p>新用户（未绑定邀请人）发送XAG时输入您的<strong>WTAA全球数字身份ID</strong>作为Tag，即可绑定你为邀请人。</p>
+            <p>一旦绑定，立即生效，不可更改，永久领取邀请奖励。</p>
+            <p>两级奖励，直推用户奖金的2%，二级用户奖金的0.5%，中奖现返奖励。</p>
+            <p></p>
+            <p class="none"><a href="javascript:;" onclick="check()">返回游戏</a></p>
+        </div>
     </div>
+    <script type="text/javascript">
+        var showRefer = false;
+        function check() {
+            var game = document.getElementById('game');
+            var refer = document.getElementById('refer');
+            showRefer = !showRefer;
+            game.style.display = showRefer ? "none" : "block";
+            refer.style.display = showRefer ? "block" : "none";
+        }
+    </script>
 </body>
 </html>
