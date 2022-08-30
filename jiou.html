@@ -4,18 +4,7 @@
     <meta charset="utf-8">
     <title>奇偶哈希</title>
     <style>
-        html { box-sizing: border-box; }
-
-        *,
-        *::before,
-        *::after { box-sizing: inherit; }
-
-        body * {
-          margin: 0;
-          padding: 0;
-        }
-
-        body {
+        .jiou {
           font: normal 100%/1.15 "Merriweather", serif;
           background-color: #D3DEEA;
           color: #216f79;
@@ -43,29 +32,29 @@
             text-align: center;
         }
 
-        h1 {
+        .box h1 {
           margin: 0 0 1rem 0;
           font-size: 1.8em;
         }
 
-        p {
+        .box p {
           margin-bottom: 0.5em;
           font-size: 16px;
         }
 
         /*p:first-of-type { margin-top: 4em; }*/
 
-        p > a {
-          border-bottom: 1px dashed #216f79;
+        .box .link {
           font-style: normal;
-          text-decoration: none;
+          text-decoration: none;  
           color: #216f79;
-          text-shadow: 0 0 6px #216f79;
+          border-bottom: 1px dashed #216f79;
+          text-shadow: 0 0 6px #216f79;      
         }
 
-        p > a:hover { text-shadow: 0 0 6px #216f79; }
+        .box p > a:hover { text-shadow: 0 0 6px #216f79; }
 
-        p img { vertical-align: bottom; }
+        .box p img { vertical-align: bottom; }
 
         .button {
             background-color: #4CAF50; /* Green */
@@ -79,7 +68,7 @@
         }
     </style>
 </head>
-<body>
+<body class="jiou">
     <div class="wrapper">
         <div class="box" id="game">
             <h1 class="center">奇偶哈希</h1>
@@ -90,8 +79,7 @@
             <p>例如：发送101 XAG，如果区块高度最后一位数字是奇数，则中奖。发送100 XAG，则区块高度最后一位数字是偶数中奖。</p>
             <p>范围：100~100000 XAG, 10~1000 USDT</p>
             <p class="center"><a class="button" href="XSEND://xrpgen:100:XAG::rHQnAi7wN9wbyZBqRDQY5YpzTBRE8Hibet::">开始竞猜</a></p>
-            <p class="none"><a href="https://xag-labs.com/dapp/refer.html">邀请他人得返奖</a></p>
-            <p class="none"><a href="javascript:;" onclick="check()">邀请他人得返奖</a></p>
+            <p class="none"><a href="javascript:;" onclick="check()" class="link">邀请他人得返奖</a></p>
         </div>
         <div class="box" id="refer" style="display: none;">
             <h1 class="center">返奖规则</h1>
@@ -99,7 +87,7 @@
             <p>一旦绑定，立即生效，不可更改，永久领取邀请奖励。</p>
             <p>两级奖励，直推用户奖金的2%，二级用户奖金的0.5%，中奖现返奖励。</p>
             <p></p>
-            <p class="none"><a href="javascript:;" onclick="check()">返回游戏</a></p>
+            <p class="none"><a href="javascript:;" onclick="check()" class="link">返回游戏</a></p>
         </div>
     </div>
     <script type="text/javascript">
